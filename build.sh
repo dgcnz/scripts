@@ -24,8 +24,7 @@ config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs dirname | sort |
 
 config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
 echo "$DOTFILES" >> .gitignore
-git clone --bare git@github.com:dgcnz/dotfiles.git $DOTFILES
-gh repo clone dgcnz/dotfiles $HOME/development/resources/dotfiles -- --bare
+gh repo clone dgcnz/dotfiles $DOTFILES -- --bare
 config config --local status.showUntrackedFiles no
 
 gh repo clone dgcnz/competitive-programming $HOME/development/algorithms/competitive-programming
@@ -33,4 +32,7 @@ gh repo clone dgcnz/cp-library $HOME/development/algorithms/cp-library
 gh repo clone atcoder/ac-library $HOME/development/algorithms/ac-library
 
 pamac build google-chrome dbg-macro discord
+sudo install_pulse
 sudo pacman -Rcn lightdm
+sudo pacman -Rcd pulseaudio
+sudo pacman -S pipewire

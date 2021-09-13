@@ -1,4 +1,5 @@
 sudo pacman -Syu
+pamac update
 
 cd $HOME
 mkdir -p $HOME/development/resources/dotfiles
@@ -31,8 +32,6 @@ gh repo clone dgcnz/competitive-programming $HOME/development/algorithms/competi
 gh repo clone dgcnz/cp-library $HOME/development/algorithms/cp-library
 gh repo clone atcoder/ac-library $HOME/development/algorithms/ac-library
 
-pamac build google-chrome dbg-macro discord
-sudo install_pulse
+pamac build google-chrome dbg-macro discord zotero zoom spotify
 sudo pacman -Rcn lightdm
-sudo pacman -Rcd pulseaudio
-sudo pacman -S pipewire
+sudo pacman -S manjaro-pipewire okular

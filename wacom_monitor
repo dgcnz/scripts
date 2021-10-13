@@ -1,0 +1,22 @@
+#!/bin/bash
+
+monitor1="DisplayPort-0"
+monitor2="HDMI-A-0"
+monitor3="DVI-D-0"
+
+case $1 in 
+    1)
+    xsetwacom --set "Wacom Intuos S 2 Pen stylus" MapToOutput $monitor1
+    ;;                                          
+    2)                                          
+    xsetwacom --set "Wacom Intuos S 2 Pen stylus" MapToOutput $monitor2
+    ;;                                          
+
+    3)                                         
+    xsetwacom --set "Wacom Intuos S 2 Pen stylus" MapToOutput $monitor3
+    ;;
+
+    *)
+    xsetwacom --set "Wacom Intuos S 2 Pen stylus" MapToOutput $monitor1
+    ;;                                          
+esac

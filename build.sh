@@ -21,12 +21,11 @@ export DOTFILES="$HOME/development/resources/dotfiles"
 alias config="/usr/bin/git --git-dir=$DOTFILES --work-tree=$HOME"
 
 
-config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs dirname | sort | uniq | xargs -I{} mkdir -p .config-backup/{}
-
-config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
 echo "$DOTFILES" >> .gitignore
 gh repo clone dgcnz/dotfiles $DOTFILES -- --bare
 config config --local status.showUntrackedFiles no
+config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs dirname | sort | uniq | xargs -I{} mkdir -p .config-backup/{}
+
 
 gh repo clone dgcnz/competitive-programming $HOME/development/algorithms/competitive-programming
 gh repo clone dgcnz/cp-library $HOME/development/algorithms/cp-library

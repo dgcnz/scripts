@@ -17,6 +17,6 @@ case $1 in
     ;;
 
     *)
-    xsetwacom --set "Wacom Intuos S 2 Pen stylus" MapToOutput $monitor1
+    xsetwacom --set "Wacom Intuos S 2 Pen stylus" MapToOutput $monitor2
     ;;                                          
 esac
